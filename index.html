@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1> Basic calculator </h1>
+
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            background: white;
+        }
+        
+        body {
+            background-color: #8F7272;
+        }
+        
+        #btn {
+            width: 55px;
+            height: 50px;
+        }
+        
+        #dbtn {
+            width: 225px;
+            height: 50px;
+        }
+        
+        table {
+            background-color: rgba(19, 4, 59, 0.62);
+            padding: 2px 2px;
+            margin: 20px 350px;
+        }
+        
+        input[type=text] {
+            font-size: 20px;
+            padding: 5px 5px;
+            margin: 5px 0 15px 0;
+        }
+    </style>
+
+
+    <form name='mYcal'>
+        <table>
+
+            <tr>
+                <th colspan=4> <input id='dbtn' name='display' type='text' placeholder="0"> </th>
+
+            </tr>
+
+            <tr>
+                <td> <input id='btn' type='button' value='7' onclick='nUm("7")'> </td>
+                <td> <input id='btn' type='button' value='8' onclick='nUm("8")'> </td>
+                <td> <input id='btn' type='button' value='9' onclick='nUm("9")'> </td>
+                <td> <input id='btn' type='button' value='+' onclick='nUm("+")'> </td>
+            </tr>
+
+            <tr>
+                <td> <input id='btn' type='button' value='4' onclick='nUm("4")'> </td>
+                <td> <input id='btn' type='button' value='5' onclick='nUm("5")'> </td>
+                <td> <input id='btn' type='button' value='6' onclick='nUm("6")'> </td>
+                <td> <input id='btn' type='button' value='-' onclick='nUm("-")'> </td>
+            </tr>
+
+            <tr>
+                <td> <input id='btn' type='button' value='1' onclick='nUm("1")'> </td>
+                <td> <input id='btn' type='button' value='2' onclick='nUm("2")'> </td>
+                <td> <input id='btn' type='button' value='3' onclick='nUm("3")'> </td>
+                <td> <input id='btn' type='button' value='x' onclick='nUm("*")'> </td>
+            </tr>
+
+            <tr>
+                <td> <input id='btn' type='button' value='C' onclick='cLear()'> </td>
+                <td> <input id='btn' type='button' value='0' onclick='nUm("0")'> </td>
+                <td> <input id='btn' type='button' value='=' onclick='reZlt()'> </td>
+                <td> <input id='btn' type='button' value='/' onclick='nUm("/")'> </td>
+            </tr>
+
+        </table>
+    </form>
+
+
+    <script>
+        function nUm(num) {
+            return document.mYcal.display.value += num
+        }
+
+
+        function reZlt() {
+            var result = eval(document.mYcal.display.value);
+            document.mYcal.display.value = result;
+        };
+
+        function cLear() {
+            document.mYcal.display.value = ''
+        };
+    </script>
+
+    <footer>
+        <p>&copy; IDREES PASWAL </p>
+    </footer>
+
+
+</body>
+
+</html>
